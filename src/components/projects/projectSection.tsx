@@ -49,32 +49,50 @@ const projects: Project[] = [
   },
 ]
 
-function screenshotPlaceholder(bg: string, name: string): string {
-  return `<div class="project-screenshot" style="background:${bg};display:flex;align-items:center;justify-content:center;">
-    <span style="font-size:0.6rem;color:#3d6b4a;letter-spacing:0.12em;text-transform:uppercase;">[${name}]</span>
-  </div>`
+function ScreenshotPlaceholder({ bg, name }: { bg: string; name: string }) {
+  return (
+    <div
+      className="project-screenshot"
+      style={{ background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+    >
+      <span style={{ fontSize: '0.6rem', color: '#3d6b4a', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+        [{name}]
+      </span>
+    </div>
+  )
 }
 
-function renderCard(p: Project): string {
-  const cls = p.badge === 'open source' ? 'open' : 'closed'
-  return `
-    <div class="project-card fade-in">
-      <div class="project-card-header">
-        <span class="project-name">${p.name}</span>
-        <span class="project-badge ${cls}">${p.badge}</span>
+function ProjectCard({ project }: { project: Project }) {
+  const badgeClass = project.badge === 'open source' ? 'open' : 'closed'
+
+  return (
+    <div className="project-card fade-in">
+      <div className="project-card-header">
+        <span className="project-name">{project.name}</span>
+        <span className={`project-badge ${badgeClass}`}>{project.badge}</span>
       </div>
-      ${screenshotPlaceholder(p.screenshotBg, p.name)}
-      <p class="project-subtitle">${p.subtitle}</p>
-      <p class="project-desc">${p.description}</p>
-      <div class="project-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <ScreenshotPlaceholder bg={project.screenshotBg} name={project.name} />
+      <p className="project-subtitle">{project.subtitle}</p>
+      <p className="project-desc">{project.description}</p>
+      <div className="project-tags">
+        {project.tags.map((tag) => (
+          <span key={tag} className="tag">
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
-  `
+  )
 }
 
-export function renderProjects(): string {
-  return `
-    <div class="projects-wrap" id="projects">
-      <div class="projects-grid">${projects.map(renderCard).join('')}</div>
+export function Projects() {
+  return (
+    <div className="projects-wrap" id="projects">
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
+      </div>
     </div>
-  `
+  )
 }
