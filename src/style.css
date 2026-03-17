@@ -46,7 +46,10 @@
   --max-w: 1100px;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth;
+  scrollbar-color: #686868 #f1f1f1;
+ }
 
 body {
   font-family: var(--mono);

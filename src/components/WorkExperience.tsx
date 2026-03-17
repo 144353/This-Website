@@ -65,7 +65,7 @@ export function WorkExperience() {
                   <a target="_blank" rel="noopener noreferrer"
                     key={link.label}
                     href={link.href}
-                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium transition ${
+                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium transition bg-[#ffe294] ${
                       link.label.toLowerCase().includes('view site')
                         ? 'border-[color-mix(in_oklch,var(--color-primary)_16%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_8%,white)] text-[var(--color-primary)] hover:-translate-y-0.5 hover:border-[color-mix(in_oklch,var(--color-primary)_42%,transparent)] hover:bg-[color-mix(in_oklch,var(--color-primary)_22%,white)] hover:text-[var(--color-primary)] hover:shadow-md'
                         : 'border-[color-mix(in_oklch,var(--color-primary)_10%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_6%,white)] text-[color-mix(in_oklch,var(--color-primary)_90%,currentColor)] hover:border-[color-mix(in_oklch,var(--color-primary)_18%,transparent)] hover:bg-[color-mix(in_oklch,var(--color-primary)_10%,white)]'

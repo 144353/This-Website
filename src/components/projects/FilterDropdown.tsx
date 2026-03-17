@@ -63,7 +63,7 @@ export function FilterDropdown({
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex items-center justify-between gap-2.5 rounded-xl border-2 border-neutral-950 bg-white px-4 py-2.5 text-left text-[13px] font-medium text-neutral-950 shadow-[0_3px_0_rgba(0,0,0,0.04)] transition hover:-translate-y-0.5 hover:border-[#c96e10] hover:text-[#c96e10] hover:shadow-[0_8px_18px_color-mix(in_oklch,#c96e10_16%,transparent)]"
+        className="flex items-center justify-between gap-2.5 rounded-xl border-2 border-[#faebc0] bg-white px-4 py-2.5 text-left text-[13px] font-medium text-neutral-950 shadow-[0_3px_0_rgba(0,0,0,0.04)] transition hover:-translate-y-0.5 hover:border-[#c96e10] hover:text-[#c96e10] hover:shadow-[0_8px_18px_color-mix(in_oklch,#c96e10_16%,transparent)]"
         aria-label={`${label}: ${selectedOption}`}
       >
         <span className="whitespace-nowrap">
@@ -90,7 +90,7 @@ export function FilterDropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
             transition={{ duration: 0.18 }}
-            className="absolute right-0 top-full z-20 mt-2 overflow-hidden rounded-xl border-2 border-neutral-950 bg-white p-1.5 shadow-[0_16px_34px_rgba(0,0,0,0.16)]"
+            className="absolute right-0 top-full z-20 mt-2 overflow-hidden rounded-xl border-2 border-[#faebc0] bg-white p-1.5 shadow-[0_16px_34px_rgba(0,0,0,0.16)]"
           >
             <div className="flex min-w-[190px] flex-col gap-1">
               {options.map((option) => {
