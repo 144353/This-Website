@@ -120,7 +120,7 @@ export function ProjectCard({ project, index, compact = false, onClick }: Projec
           ) : null}
           </div>
 
-          <span className="hidden text-sm font-medium text-[#0b67d1] transition group-hover:translate-x-0.5 group-hover:text-[#0b67d1] md:inline-flex">
+          <span className="hidden translate-x-1 opacity-0 text-sm font-medium text-[#0b67d1] transition duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 md:inline-flex">
             View Project →
           </span>
         </div>

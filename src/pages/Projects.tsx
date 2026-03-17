@@ -53,7 +53,7 @@ export function Projects() {
     <section id="projects" className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pb-16 pt-10 md:px-8">
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <header className="flex flex-col gap-2">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Projects</p>
+          {/* <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Projects</p> */}
           <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">Projects</h1>
         </header>
 

@@ -36,7 +36,12 @@ export function FilterDropdown({
     if (!paramName) return
 
     const valueFromUrl = searchParams.get(paramName)
-    if (!valueFromUrl || valueFromUrl === selectedOption) return
+    if (!valueFromUrl) {
+      if (selectedOption !== 'All') onSelect('All')
+      return
+    }
+
+    if (valueFromUrl === selectedOption) return
     if (options.includes(valueFromUrl)) onSelect(valueFromUrl)
   }, [onSelect, options, paramName, searchParams, selectedOption])
 
@@ -58,11 +63,14 @@ export function FilterDropdown({
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex items-center justify-between gap-3 rounded-2xl border-2 border-neutral-950 bg-white px-5 py-3 text-left text-sm font-medium text-neutral-950 shadow-[0_4px_0_rgba(0,0,0,0.04)] transition hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:shadow-[0_10px_24px_color-mix(in_oklch,var(--color-primary)_16%,transparent)]"
+        className="flex items-center justify-between gap-3 rounded-2xl border-2 border-neutral-950 bg-white px-5 py-3 text-left text-sm font-medium text-neutral-950 shadow-[0_4px_0_rgba(0,0,0,0.04)] transition hover:-translate-y-0.5 hover:border-[#c96e10] hover:text-[#c96e10] hover:shadow-[0_10px_24px_color-mix(in_oklch,#c96e10_16%,transparent)]"
         aria-label={`${label}: ${selectedOption}`}
       >
         <span className="whitespace-nowrap">
-          {label}: <span className="font-semibold">{selectedOption}</span>
+          {label}:{' '}
+          <span className="rounded-lg bg-[color-mix(in_oklch,#c96e10_18%,white)] px-2 py-1 font-semibold text-[#c96e10]">
+            {selectedOption}
+          </span>
         </span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -93,10 +101,10 @@ export function FilterDropdown({
                     key={option}
                     type="button"
                     onClick={() => handleSelect(option)}
-                    className={`rounded-xl px-3 py-2.5 text-left text-sm font-medium transition ${
+                    className={`rounded-xl px-3 py-2.5 text-left text-sm font-medium transition duration-150 ${
                       isSelected
-                        ? 'bg-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] text-[var(--color-primary)]'
-                        : 'text-neutral-700 hover:bg-[color-mix(in_oklch,var(--color-primary)_8%,transparent)] hover:text-[var(--color-primary)]'
+                        ? 'bg-[color-mix(in_oklch,#c96e10_16%,white)] text-[#c96e10] shadow-[inset_0_0_0_1px_color-mix(in_oklch,#c96e10_22%,transparent)] hover:bg-[color-mix(in_oklch,#c96e10_22%,white)] hover:text-[#a35407]'
+                        : 'text-neutral-700 hover:bg-[color-mix(in_oklch,#c96e10_22%,white)] hover:pl-4 hover:text-[#a35407]'
                     }`}
                   >
                     {option}
