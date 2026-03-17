@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Nav } from './components/nav'
-import { Hero } from './components/hero'
-import { About } from './components/about'
-import { Documents } from './components/Documents'
-import { Projects } from './components/projects/projectSection'
 import { Footer } from './components/footer'
+import { HomePage } from './pages/HomePage'
+import { ProjectView } from './pages/ProjectView'
 
 export function App() {
+  const location = useLocation()
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,17 +22,16 @@ export function App() {
     elements.forEach((element) => observer.observe(element))
 
     return () => observer.disconnect()
-  }, [])
+  }, [location.pathname])
 
   return (
     <>
       <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Documents />
-        <Projects />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<Navigate to="/#projects" replace />} />
+        <Route path="/projects/:id" element={<ProjectView />} />
+      </Routes>
       <Footer />
     </>
   )

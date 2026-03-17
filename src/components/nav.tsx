@@ -3,12 +3,12 @@ export function Nav() {
     <nav>
       <ul className="nav-links">
         <li>
-          <a href="#projects" className="nav-link">
+          <a href="/#projects" className="nav-link">
             Projects
           </a>
         </li>
         <li>
-          <a href="#documents">Documents</a>
+          <a href="/#documents">Documents</a>
         </li>
         <li>
           <a href="https://github.com/144353" target="_blank" rel="noreferrer">
@@ -16,7 +16,7 @@ export function Nav() {
           </a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="/#contact">Contact</a>
         </li>
       </ul>
     </nav>
