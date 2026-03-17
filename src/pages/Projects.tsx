@@ -50,8 +50,8 @@ export function Projects() {
   }, [projects, selectedTag])
 
   return (
-    <section id="projects" className="mx-auto flex w-full max-w-[var(--max-w)] flex-col gap-8 px-6 pb-16 pt-10 md:px-8">
-      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+    <section id="projects" className="mx-auto flex w-full max-w-[980px] flex-col gap-6 px-6 pb-16 pt-10 md:px-8">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <header className="flex flex-col gap-2">
           {/* <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Projects</p> */}
           {/* <h2 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">Projects</h2> */}
@@ -86,7 +86,7 @@ export function Projects() {
       ) : null}
 
       {!isLoading && !error && filteredProjects.length > 0 ? (
-        <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <section className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

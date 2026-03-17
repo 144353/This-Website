@@ -4,8 +4,8 @@ interface ImportantDocument {
 }
 
 const documents: ImportantDocument[] = [
-  { label: 'Official-Transcript', url: '#' },
-  { label: 'Resume', url: '#' },
+  { label: 'Official-Transcript', url: 'public/Transcript(Poly).pdf' },
+  { label: 'Resume', url: 'public/Qiu Jie resume.pdf' },
 ]
 
 export function Documents() {
@@ -14,7 +14,8 @@ export function Documents() {
       <h2 className="documents-title">Important Documents</h2>
       <div className="documents-links">
         {documents.map((document) => (
-          <a key={document.label} href={document.url} className="document-link">
+          <a key={document.label} href={document.url} className="document-link" target="_blank"
+            rel="noopener noreferrer">
             {document.label}
           </a>
         ))}
