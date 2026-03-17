@@ -53,7 +53,8 @@ export function WorkExperience() {
             <div className="flex flex-col gap-3 md:w-3/4">
               <div className="flex flex-col gap-1">
                 <h3 className="text-lg font-semibold">{experience.company}</h3>
-                <p className="text-sm font-medium text-[color-mix(in_oklch,var(--color-primary)_90%,currentColor)]">
+                {/* <p className="text-sm font-medium text-[color-mix(in_oklch,var(--color-primary)_90%,currentColor)]"> */}
+                <p className="text-sm font-medium text-[#e8831a]">
                   {experience.role}
                 </p>
               </div>

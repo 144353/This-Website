@@ -73,53 +73,51 @@ export function ProjectView() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-8 px-6 pb-16 pt-28 md:px-8">
-      <Link to="/#projects" className="text-sm font-medium text-neutral-600 transition hover:text-[var(--color-primary)]">
+    <main className="mx-auto flex min-h-screen w-full max-w-[var(--max-w)] flex-col gap-8 px-6 pb-16 pt-24 md:px-8">
+      <Link to="/#projects" className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]">
         ← Back to Projects
       </Link>
 
-      <header className="flex flex-col gap-5">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">{project.title}</h1>
-          <div className="flex flex-wrap gap-3">
-            {project.githubLink ? (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]"
-              >
-                GitHub
-              </a>
-            ) : null}
-            {project.demoLink ? (
-              <a
-                href={project.demoLink}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]"
-              >
-                Live Demo
-              </a>
-            ) : null}
-          </div>
-        </div>
-
+      <header className="flex flex-col gap-4">
+        <h1 className="text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl">{project.title}</h1>
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_7%,transparent)] px-3 py-1 text-xs font-medium text-neutral-700"
+              className="rounded-full border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_8%,white)] px-3 py-1 text-xs font-medium text-neutral-700"
             >
               {tag}
             </span>
           ))}
         </div>
+
+        <div className="flex flex-wrap gap-6 text-base">
+          {project.githubLink ? (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-neutral-950 transition hover:text-[var(--color-primary)]"
+            >
+              GitHub →
+            </a>
+          ) : null}
+          {project.demoLink ? (
+            <a
+              href={project.demoLink}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-neutral-950 transition hover:text-[var(--color-primary)]"
+            >
+              Live Demo →
+            </a>
+          ) : null}
+        </div>
       </header>
 
       <MarkdownRenderer
         content={project.content}
-        className="prose prose-neutral max-w-none rounded-[2rem] bg-white p-8 shadow-sm prose-headings:tracking-tight prose-a:text-[var(--color-primary)]"
+        className="prose prose-neutral max-w-none pt-2 prose-headings:tracking-tight prose-a:text-[var(--color-primary)]"
       />
     </main>
   )

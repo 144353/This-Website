@@ -6,17 +6,14 @@ export function Hero() {
       <div className="hero-section">
         <p className="hero-section-label">Currently I am...</p>
         <p className="hero-section-body">
-          studying <a href="#">physics at UIUC</a>, researching <a href="#">AI/ML at UC Berkeley</a>,
-          an AI Engineer at <a href="#">NCSA</a>, building <a href="#">AgAnswers.ai</a>, researching
-          robotics at UIUC, and <a href="#">reading</a>
+          exploring what i want to do, building <a href="#">Libby Recommend</a> and <a href="#">reading</a>
         </p>
       </div>
 
       <div className="hero-section">
         <p className="hero-section-label">Not so currently, I am...</p>
         <p className="hero-section-body">
-          playing hockey for UIUC d1, <a href="#">the founder of aaxiom.org</a>, and playing
-          competitive chess (although I do currently play a lot of blitz)
+          studying at <a href="#">Temasek Polytechnic</a> and interning at <a href="#">PricewaterHouse Coopers(PwC)</a> as an software engineer
         </p>
       </div>
     </div>
