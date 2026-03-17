@@ -51,21 +51,20 @@ export function Projects() {
 
   return (
     <section id="projects" className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pb-16 pt-10 md:px-8">
-      <header className="flex flex-col gap-3">
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Projects</p>
-        <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">Selected Work</h1>
-        <p className="max-w-2xl text-base leading-8 text-neutral-600">
-          Browse the latest project metadata from GitHub and filter by stack or area.
-        </p>
-      </header>
+      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <header className="flex flex-col gap-2">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Projects</p>
+          <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">Projects</h1>
+        </header>
 
-      <FilterDropdown
-        label="Filter by Tag"
-        options={tags}
-        selectedOption={selectedTag}
-        onSelect={setSelectedTag}
-        paramName="tag"
-      />
+        <FilterDropdown
+          label="Filter by Tag"
+          options={tags}
+          selectedOption={selectedTag}
+          onSelect={setSelectedTag}
+          paramName="tag"
+        />
+      </div>
 
       {isLoading ? (
         <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-white px-6 py-10 text-sm text-neutral-600 shadow-sm">

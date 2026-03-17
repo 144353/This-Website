@@ -54,18 +54,20 @@ export function FilterDropdown({
   }
 
   return (
-    <div ref={containerRef} className="relative inline-flex min-w-56 flex-col">
-      <span className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-neutral-500">{label}</span>
+    <div ref={containerRef} className="relative inline-flex min-w-[220px] flex-col">
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex items-center justify-between rounded-2xl border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-white px-4 py-3 text-left text-sm text-neutral-900 shadow-sm transition hover:border-[color-mix(in_oklch,var(--color-primary)_28%,transparent)] hover:shadow-md"
+        className="flex items-center justify-between gap-3 rounded-2xl border-2 border-neutral-950 bg-white px-5 py-3 text-left text-sm font-medium text-neutral-950 shadow-[0_4px_0_rgba(0,0,0,0.04)] transition hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:shadow-[0_10px_24px_color-mix(in_oklch,var(--color-primary)_16%,transparent)]"
+        aria-label={`${label}: ${selectedOption}`}
       >
-        <span>{selectedOption}</span>
+        <span className="whitespace-nowrap">
+          {label}: <span className="font-semibold">{selectedOption}</span>
+        </span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          className="text-neutral-500"
+          className="shrink-0 text-neutral-700"
         >
           <svg viewBox="0 0 20 20" className="h-4 w-4 fill-current" aria-hidden="true">
             <path d="M5.25 7.5L10 12.25L14.75 7.5" />
@@ -80,9 +82,9 @@ export function FilterDropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
             transition={{ duration: 0.18 }}
-            className="absolute top-full z-20 mt-2 overflow-hidden rounded-2xl border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-white p-2 shadow-xl"
+            className="absolute right-0 top-full z-20 mt-3 overflow-hidden rounded-2xl border-2 border-neutral-950 bg-white p-2 shadow-[0_18px_40px_rgba(0,0,0,0.16)]"
           >
-            <div className="flex min-w-56 flex-col gap-1">
+            <div className="flex min-w-[220px] flex-col gap-1">
               {options.map((option) => {
                 const isSelected = option === selectedOption
 
@@ -91,10 +93,10 @@ export function FilterDropdown({
                     key={option}
                     type="button"
                     onClick={() => handleSelect(option)}
-                    className={`rounded-xl px-3 py-2 text-left text-sm transition ${
+                    className={`rounded-xl px-3 py-2.5 text-left text-sm font-medium transition ${
                       isSelected
                         ? 'bg-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] text-[var(--color-primary)]'
-                        : 'text-neutral-700 hover:bg-[color-mix(in_oklch,var(--color-primary)_7%,transparent)] hover:text-neutral-950'
+                        : 'text-neutral-700 hover:bg-[color-mix(in_oklch,var(--color-primary)_8%,transparent)] hover:text-[var(--color-primary)]'
                     }`}
                   >
                     {option}
