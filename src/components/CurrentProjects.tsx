@@ -4,6 +4,7 @@ import { fetchProjects, type ProjectMeta } from '../lib/projects'
 
 const CURRENT_PROJECT_IDS = [
   'Libby-Book-Recommender',
+
   
 ]
 
@@ -44,7 +45,7 @@ export function CurrentProjects() {
   }, [projects])
 
   return (
-    <section className="mx-auto flex w-full max-w-[980px] flex-col gap-6 px-6 pb-16 pt-10 md:px-8">
+    <section className="mx-auto flex w-full max-w-[900px] flex-col gap-6 px-6 pb-16 pt-10 md:px-8">
       <header className="flex flex-col gap-2">
         <h2 className="text-2xl font-bold">Current Projects</h2>
         <p>Building meaningful projects is how I translate my ideas into reality. Each project represents a problem I found worth solving or a question I wanted to explore. While I have many interests, these featured projects showcase my current focus on creating practical tools that help people learn, work, and research more effectively.</p>
@@ -69,11 +70,18 @@ export function CurrentProjects() {
       ) : null}
 
       {!isLoading && !error && filteredProjects.length > 0 ? (
-        <section className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </section>
+        <>
+          <section className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} squarish />
+            ))}
+          </section>
+
+          <p className="mx-auto max-w-[46rem] text-center text-[10px] italic leading-6 text-current/65">
+            These projects are just a small sample of my work. I'm constantly building and experimenting with new ideas.
+            Check out my GitHub for more or reach out if you'd like to collaborate!
+          </p>
+        </>
       ) : null}
     </section>
   )

@@ -7,6 +7,7 @@ interface ProjectCardProps {
   project: ProjectMeta
   index: number
   compact?: boolean
+  squarish?: boolean
   onClick?: (project: ProjectMeta) => void
 }
 
@@ -27,7 +28,7 @@ function ExternalLinkIcon() {
   )
 }
 
-export function ProjectCard({ project, index, compact = false, onClick }: ProjectCardProps) {
+export function ProjectCard({ project, index, compact = false, squarish = false, onClick }: ProjectCardProps) {
   const navigate = useNavigate()
 
   const handleNavigate = () => {
@@ -59,12 +60,14 @@ export function ProjectCard({ project, index, compact = false, onClick }: Projec
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
-      className="group relative overflow-hidden rounded-[1.25rem] border border-[color-mix(in_oklch,#c96e10_12%,transparent)] bg-[linear-gradient(180deg,#fffdfa_0%,#fffaf4_100%)] p-5 text-left shadow-[0_8px_22px_rgba(15,23,42,0.045)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[color-mix(in_oklch,#c96e10_42%,transparent)] hover:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,white)_0%,color-mix(in_oklch,#c96e10_5%,white)_100%)] hover:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] focus-visible:-translate-y-1 focus-visible:border-[color-mix(in_oklch,#c96e10_42%,transparent)] focus-visible:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,white)_0%,color-mix(in_oklch,#c96e10_5%,white)_100%)] focus-visible:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)]"
+      className={`group relative overflow-hidden border border-[color-mix(in_oklch,#c96e10_12%,transparent)] bg-[linear-gradient(180deg,#fffdfa_0%,#fffaf4_100%)] text-left shadow-[0_8px_22px_rgba(15,23,42,0.045)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[color-mix(in_oklch,#c96e10_42%,transparent)] hover:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,white)_0%,color-mix(in_oklch,#c96e10_5%,white)_100%)] hover:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] focus-visible:-translate-y-1 focus-visible:border-[color-mix(in_oklch,#c96e10_42%,transparent)] focus-visible:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,white)_0%,color-mix(in_oklch,#c96e10_5%,white)_100%)] focus-visible:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] ${
+        squarish ? 'min-h-[22rem] rounded-[1.05rem] p-4' : 'rounded-[1.25rem] p-5'
+      }`}
     >
       <div className="pointer-events-none absolute right-0 top-0 h-36 w-36 rounded-bl-[6rem] bg-[radial-gradient(circle_at_top_right,color-mix(in_oklch,#c96e10_14%,transparent),transparent_66%)] opacity-80 transition duration-300 group-hover:scale-105 group-hover:opacity-100" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,color-mix(in_oklch,#c96e10_24%,transparent),transparent)] opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
 
-      <div className="relative flex h-full flex-col gap-3.5">
+      <div className={`relative flex h-full flex-col ${squarish ? 'gap-3' : 'gap-3.5'}`}>
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-lg font-semibold tracking-tight text-neutral-950 transition group-hover:text-[#c96e10] group-focus-visible:text-[#c96e10]">
             {project.title}
@@ -73,7 +76,7 @@ export function ProjectCard({ project, index, compact = false, onClick }: Projec
 
         <p
           className={`overflow-hidden text-[13px] leading-6 text-neutral-700 [display:-webkit-box] [-webkit-box-orient:vertical] ${
-            compact ? '[-webkit-line-clamp:3]' : '[-webkit-line-clamp:2]'
+            squarish ? '[-webkit-line-clamp:4]' : compact ? '[-webkit-line-clamp:3]' : '[-webkit-line-clamp:2]'
           }`}
         >
           {project.description}
@@ -90,7 +93,7 @@ export function ProjectCard({ project, index, compact = false, onClick }: Projec
           ))}
         </div>
 
-        <div className="mt-auto flex items-center justify-between gap-3 pt-2">
+        <div className={`flex items-center justify-between gap-3 ${squarish ? 'mt-1 pt-0.5' : 'mt-auto pt-2'}`}>
           <div className="flex flex-wrap gap-3">
           {project.githubLink ? (
             <a
