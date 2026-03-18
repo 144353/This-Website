@@ -4,7 +4,6 @@ import { IntroHeader } from '../components/IntroHeader'
 import { Nav } from '../components/nav'
 import { TldrSection } from '../components/TldrSection'
 import { WorkExperience } from '../components/WorkExperience'
-import { Projects } from './Projects'
 import GitHubChart from "../components/Git";
 
 export function HomePage() {
@@ -17,7 +16,6 @@ export function HomePage() {
       <Documents />
       <WorkExperience />
       <GitHubChart username="144353" />
-      <Projects />
     </main>
   )
 }

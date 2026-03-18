@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { Footer } from './components/footer'
 import { HomePage } from './pages/HomePage'
+import { Projects } from './pages/Projects'
 import { ProjectView } from './pages/ProjectView'
 
 export function App() {
@@ -27,7 +28,7 @@ export function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<Navigate to="/#projects" replace />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectView />} />
       </Routes>
       <Footer />

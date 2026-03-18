@@ -74,7 +74,7 @@ export function ProjectView() {
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-[920px] flex-col gap-7 px-6 pb-16 pt-24 md:px-8">
-      <Link to="/#projects" className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]">
+      <Link to="/projects" className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]">
         ← Back to Projects
       </Link>
 

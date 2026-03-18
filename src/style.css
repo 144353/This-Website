@@ -69,11 +69,12 @@ nav {
   font-size: 0.82rem;
   font-weight: 400;
   color: var(--text-dim);
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
 .section-nav-link:hover {
-  color: var(--color-primary);
+  color: var(--green);
+  transform: translateY(-1px);
 }
 
 .section-nav-link.active {
