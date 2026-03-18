@@ -4,8 +4,8 @@ interface ImportantDocument {
 }
 
 const documents: ImportantDocument[] = [
-  { label: 'Official-Transcript', url: 'public/Transcript(Poly).pdf' },
-  { label: 'Resume', url: 'public/Qiu Jie resume.pdf' },
+  { label: 'Official-Transcript', url: '/Transcript(Poly).pdf' },
+  { label: 'Resume', url: '/Qiu Jie resume.pdf' },
 ]
 
 export function Documents() {
