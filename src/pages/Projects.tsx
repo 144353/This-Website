@@ -58,7 +58,7 @@ export function Projects() {
       <section className="mx-auto flex w-full max-w-[980px] flex-col gap-6 px-6 pt-10 md:px-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <header className="flex flex-col gap-2">
-            <h1 className="text-2xl font-bold">Current Projects</h1>
+            <h1 className="text-2xl font-bold">Projects</h1>
           </header>
 
           <FilterDropdown

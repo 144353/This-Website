@@ -1,4 +1,5 @@
 import { About } from '../components/about'
+import { CurrentProjects } from '../components/CurrentProjects'
 import { Documents } from '../components/Documents'
 import { Education } from '../components/Education'
 import { IntroHeader } from '../components/IntroHeader'
@@ -18,6 +19,7 @@ export function HomePage() {
       <WorkExperience />
       <Education />
       <GitHubChart username="144353" />
+      <CurrentProjects />
     </main>
   )
 }
