@@ -1,6 +1,7 @@
 import { About } from '../components/about'
 import { CurrentProjects } from '../components/CurrentProjects'
 import { Documents } from '../components/Documents'
+import { DriveSection } from '../components/DriveSection'
 import { Education } from '../components/Education'
 import { IntroHeader } from '../components/IntroHeader'
 import { Nav } from '../components/nav'
@@ -20,6 +21,7 @@ export function HomePage() {
       <Education />
       <GitHubChart username="144353" />
       <CurrentProjects />
+      <DriveSection />
     </main>
   )
 }

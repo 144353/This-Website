@@ -6,7 +6,7 @@ export function TldrSection() {
       <div className="hero-section">
         <p className="hero-section-label">Currently I am...</p>
         <p className="hero-section-body">
-          exploring what i want to do, building <a href="#">Libby Recommend</a> and <a href="#">reading</a>
+          building <a href="#">Libby Recommend</a> and <a href="#">reading</a>
         </p>
       </div>
 
