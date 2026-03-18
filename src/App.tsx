@@ -70,7 +70,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage themeMode={themeMode} onToggleTheme={handleToggleTheme} />} />
         <Route path="/projects" element={<Projects themeMode={themeMode} onToggleTheme={handleToggleTheme} />} />
-        <Route path="/projects/:id" element={<ProjectView />} />
+        <Route path="/projects/:id" element={<ProjectView themeMode={themeMode} onToggleTheme={handleToggleTheme} />} />
       </Routes>
       <Footer />
     </>

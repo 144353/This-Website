@@ -38,7 +38,7 @@ export function IntroHeader({ themeMode, onToggleTheme }: IntroHeaderProps) {
     <section className="hero hero-intro-shell">
       <section className="hero-intro">
         <div className="hero-intro-media">
-          <img src="lol.png" alt="Qiu Jie" className="hero-intro-image" />
+          <img src="/lol.png" alt="Qiu Jie" className="hero-intro-image" />
         </div>
 
         <div className="hero-intro-copy">
