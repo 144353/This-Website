@@ -6,26 +6,6 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/*:root {
-  --bg: #0d1a14;
-  --bg-card: #111d16;
-  --bg-card-hover: #152019;
-  --border: #1e3326;
-  --border-bright: #2a4a36;
-  --green: #00e676;
-  --green-dim: #1a9b50;
-  --green-muted: #45cdf7;
-  --text: #c8e6c9;
-  --text-dim: #6b9e78;
-  --text-muted: #3d6b4a;
-  --tag-open-bg: #0d2e1a;
-  --tag-open-text: #00e676;
-  --tag-closed-bg: #1a1a2e;
-  --tag-closed-text: #7c7cff;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --max-w: 1100px;
-}*/
-
 :root {
   --bg: #ffffff;
   --bg-card: #ffffff;
@@ -159,10 +139,11 @@ nav {
 }
 
 .hero-intro-name {
+  font-family: var(--mono);
   font-size: clamp(1.85rem, 3.3vw, 2.45rem);
-  line-height: 0.94;
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -229,8 +210,8 @@ nav {
 }
 
 .hero-intro-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.34rem;
+  height: 1.34rem;
 }
 
 .hero-tldr {
