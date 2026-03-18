@@ -73,25 +73,25 @@ export function ProjectView() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-[var(--max-w)] flex-col gap-8 px-6 pb-16 pt-24 md:px-8">
+    <main className="mx-auto flex min-h-screen w-full max-w-[920px] flex-col gap-7 px-6 pb-16 pt-24 md:px-8">
       <Link to="/#projects" className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]">
         ← Back to Projects
       </Link>
 
       <header className="flex flex-col gap-4">
-        <h1 className="text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl">{project.title}</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-neutral-950 md:text-[2.6rem]">{project.title}</h1>
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_8%,white)] px-3 py-1 text-xs font-medium text-neutral-700"
+              className="rounded-full border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_8%,white)] px-2.5 py-0.5 text-[11px] font-medium text-neutral-700"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-6 text-base">
+        <div className="flex flex-wrap gap-5 text-[15px]">
           {project.githubLink ? (
             <a
               href={project.githubLink}
@@ -117,7 +117,7 @@ export function ProjectView() {
 
       <MarkdownRenderer
         content={project.content}
-        className="prose prose-neutral max-w-none pt-2 prose-headings:tracking-tight prose-a:text-[var(--color-primary)]"
+        className="prose prose-neutral max-w-none pt-1 text-[14px] prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:leading-7 prose-li:leading-7 prose-a:text-[var(--color-primary)]"
       />
     </main>
   )

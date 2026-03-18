@@ -34,7 +34,7 @@ function PwCLogo() {
 
 export function WorkExperience() {
   return (
-    <section className="fade-in mx-auto flex w-full max-w-[var(--max-w)] flex-col gap-6 px-6 md:px-8">
+    <section className="fade-in mx-auto flex w-full max-w-[980px] flex-col gap-6 px-6 md:px-8">
       <header className="flex flex-col gap-2">
         <h2 className="text-2xl font-bold">Work Experience</h2>
       </header>

@@ -55,7 +55,7 @@ export function Projects() {
         <header className="flex flex-col gap-2">
           {/* <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Projects</p> */}
           {/* <h2 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">Projects</h2> */}
-          <h2 className="text-2xl font-bold">Projects</h2>
+          <h2 className="text-2xl font-bold">Current Projects</h2>
         </header>
 
         <FilterDropdown
