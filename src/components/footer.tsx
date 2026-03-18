@@ -1,7 +1,7 @@
 import { useEffect, useState, type MouseEvent } from 'react'
 
 const EMAIL = 'qj20050505@gmail.com'
-const EMAIL_DISPLAY = 'me [at] gmail (dot) com'
+const EMAIL_DISPLAY = 'qj20050505 [at] gmail (dot) com'
 
 export function Footer() {
   const [showToast, setShowToast] = useState(false)
