@@ -1,6 +1,8 @@
 import { About } from '../components/about'
 import { Documents } from '../components/Documents'
-import { Hero } from '../components/hero'
+import { IntroHeader } from '../components/IntroHeader'
+import { Nav } from '../components/nav'
+import { TldrSection } from '../components/TldrSection'
 import { WorkExperience } from '../components/WorkExperience'
 import { Projects } from './Projects'
 import GitHubChart from "../components/Git";
@@ -8,7 +10,9 @@ import GitHubChart from "../components/Git";
 export function HomePage() {
   return (
     <main>
-      <Hero />
+      <IntroHeader />
+      <Nav />
+      <TldrSection />
       <About />
       <Documents />
       <WorkExperience />

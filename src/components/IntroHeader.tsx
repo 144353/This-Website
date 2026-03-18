@@ -1,7 +1,6 @@
-
-export function Hero() {
+export function IntroHeader() {
   return (
-    <div className="hero">
+    <section className="hero hero-intro-shell">
       <section className="hero-intro">
         <div className="hero-intro-media">
           <img src="lol.png" alt="Qiu Jie" className="hero-intro-image" />
@@ -25,22 +24,6 @@ export function Hero() {
           </div>
         </div>
       </section>
-
-      <h1 className="hero-tldr">TL;DR</h1>
-
-      <div className="hero-section">
-        <p className="hero-section-label">Currently I am...</p>
-        <p className="hero-section-body">
-          exploring what i want to do, building <a href="#">Libby Recommend</a> and <a href="#">reading</a>
-        </p>
-      </div>
-
-      <div className="hero-section">
-        <p className="hero-section-label">Not so currently, I am...</p>
-        <p className="hero-section-body">
-          studying at <a href="#">Temasek Polytechnic</a> and interning at <a href="#">PricewaterHouse Coopers(PwC)</a> as an software engineer
-        </p>
-      </div>
-    </div>
+    </section>
   )
 }
