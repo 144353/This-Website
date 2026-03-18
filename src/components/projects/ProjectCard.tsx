@@ -60,7 +60,7 @@ export function ProjectCard({ project, index, compact = false, squarish = false,
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
-      className={`group relative overflow-hidden border border-[color-mix(in_oklch,#c96e10_12%,transparent)] bg-[linear-gradient(180deg,#fffdfa_0%,#fffaf4_100%)] text-left shadow-[0_8px_22px_rgba(15,23,42,0.045)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[color-mix(in_oklch,#c96e10_42%,transparent)] hover:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,white)_0%,color-mix(in_oklch,#c96e10_5%,white)_100%)] hover:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] focus-visible:-translate-y-1 focus-visible:border-[color-mix(in_oklch,#c96e10_42%,transparent)] focus-visible:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,white)_0%,color-mix(in_oklch,#c96e10_5%,white)_100%)] focus-visible:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] ${
+      className={`group relative overflow-hidden border border-[color-mix(in_oklch,#c96e10_12%,transparent)] bg-[linear-gradient(180deg,color-mix(in_oklch,var(--bg-card)_94%,white)_0%,color-mix(in_oklch,var(--bg-card-hover)_88%,white)_100%)] text-left shadow-[0_8px_22px_rgba(15,23,42,0.045)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[color-mix(in_oklch,#c96e10_42%,transparent)] hover:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,var(--bg-card))_0%,color-mix(in_oklch,#c96e10_5%,var(--bg-card-hover))_100%)] hover:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] focus-visible:-translate-y-1 focus-visible:border-[color-mix(in_oklch,#c96e10_42%,transparent)] focus-visible:bg-[linear-gradient(180deg,color-mix(in_oklch,#c96e10_8%,var(--bg-card))_0%,color-mix(in_oklch,#c96e10_5%,var(--bg-card-hover))_100%)] focus-visible:shadow-[0_16px_34px_color-mix(in_oklch,#c96e10_18%,transparent)] ${
         squarish ? 'min-h-[22rem] rounded-[1.05rem] p-4' : 'rounded-[1.25rem] p-5'
       }`}
     >
@@ -69,13 +69,13 @@ export function ProjectCard({ project, index, compact = false, squarish = false,
 
       <div className={`relative flex h-full flex-col ${squarish ? 'gap-3' : 'gap-3.5'}`}>
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-lg font-semibold tracking-tight text-neutral-950 transition group-hover:text-[#c96e10] group-focus-visible:text-[#c96e10]">
+          <h3 className="text-lg font-semibold tracking-tight text-[var(--text)] transition group-hover:text-[#c96e10] group-focus-visible:text-[#c96e10]">
             {project.title}
           </h3>
         </div>
 
         <p
-          className={`overflow-hidden text-[13px] leading-6 text-neutral-700 [display:-webkit-box] [-webkit-box-orient:vertical] ${
+          className={`overflow-hidden text-[13px] leading-6 text-[var(--text-dim)] [display:-webkit-box] [-webkit-box-orient:vertical] ${
             squarish ? '[-webkit-line-clamp:4]' : compact ? '[-webkit-line-clamp:3]' : '[-webkit-line-clamp:2]'
           }`}
         >
@@ -86,7 +86,7 @@ export function ProjectCard({ project, index, compact = false, squarish = false,
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[color-mix(in_oklch,#c96e10_14%,transparent)] bg-[color-mix(in_oklch,#c96e10_8%,white)] px-2.5 py-0.5 text-[11px] font-medium text-[#8d5e12] transition group-hover:border-[color-mix(in_oklch,#c96e10_24%,transparent)] group-hover:bg-[color-mix(in_oklch,#c96e10_12%,white)]"
+              className="rounded-full border border-[color-mix(in_oklch,#c96e10_14%,transparent)] bg-[color-mix(in_oklch,#c96e10_8%,var(--bg-card))] px-2.5 py-0.5 text-[11px] font-medium text-[color-mix(in_oklch,#c96e10_78%,var(--text))] transition group-hover:border-[color-mix(in_oklch,#c96e10_24%,transparent)] group-hover:bg-[color-mix(in_oklch,#c96e10_12%,var(--bg-card))]"
             >
               {tag}
             </span>
@@ -101,7 +101,7 @@ export function ProjectCard({ project, index, compact = false, squarish = false,
               target="_blank"
               rel="noreferrer"
               onClick={stopCardNavigation}
-              className="inline-flex items-center gap-2 rounded-full border border-transparent px-2 py-1 text-[13px] font-medium text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-950 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-transparent px-2 py-1 text-[13px] font-medium text-[var(--text-dim)] transition hover:border-[var(--border-bright)] hover:bg-[var(--text)] hover:text-[var(--bg)]"
               aria-label={`Open ${project.title} GitHub repository`}
             >
               <GitHubIcon />
@@ -114,7 +114,7 @@ export function ProjectCard({ project, index, compact = false, squarish = false,
               target="_blank"
               rel="noreferrer"
               onClick={stopCardNavigation}
-              className="inline-flex items-center gap-2 rounded-full border border-transparent px-2 py-1 text-[13px] font-medium text-neutral-700 transition hover:border-[color-mix(in_oklch,#c96e10_26%,transparent)] hover:bg-[color-mix(in_oklch,#c96e10_10%,white)] hover:text-[#c96e10]"
+              className="inline-flex items-center gap-2 rounded-full border border-transparent px-2 py-1 text-[13px] font-medium text-[var(--text-dim)] transition hover:border-[color-mix(in_oklch,#c96e10_26%,transparent)] hover:bg-[color-mix(in_oklch,#c96e10_10%,var(--bg-card))] hover:text-[#c96e10]"
               aria-label={`Open ${project.title} live demo`}
             >
               <ExternalLinkIcon />

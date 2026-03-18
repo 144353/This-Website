@@ -52,19 +52,19 @@ export function CurrentProjects() {
       </header>
 
       {isLoading ? (
-        <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-white px-6 py-10 text-sm text-neutral-600 shadow-sm">
+        <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-[var(--bg-card)] px-6 py-10 text-sm text-[var(--text-dim)] shadow-sm">
           Loading current projects...
         </div>
       ) : null}
 
       {error ? (
-        <div className="rounded-3xl border border-red-200 bg-red-50 px-6 py-10 text-sm text-red-700">
+        <div className="rounded-3xl border border-[var(--danger-border)] bg-[var(--danger-bg)] px-6 py-10 text-sm text-[var(--danger-text)]">
           {error}
         </div>
       ) : null}
 
       {!isLoading && !error && filteredProjects.length === 0 ? (
-        <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-white px-6 py-10 text-sm text-neutral-600 shadow-sm">
+        <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-[var(--bg-card)] px-6 py-10 text-sm text-[var(--text-dim)] shadow-sm">
           No current projects are configured yet.
         </div>
       ) : null}

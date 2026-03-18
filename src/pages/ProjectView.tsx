@@ -55,7 +55,7 @@ export function ProjectView() {
   if (isLoading) {
     return (
       <main className="mx-auto flex min-h-screen w-full max-w-4xl px-6 pb-16 pt-28 md:px-8">
-        <div className="w-full rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-white px-6 py-10 text-sm text-neutral-600 shadow-sm">
+        <div className="w-full rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-[var(--bg-card)] px-6 py-10 text-sm text-[var(--text-dim)] shadow-sm">
           Loading project...
         </div>
       </main>
@@ -65,7 +65,7 @@ export function ProjectView() {
   if (error || !project) {
     return (
       <main className="mx-auto flex min-h-screen w-full max-w-4xl px-6 pb-16 pt-28 md:px-8">
-        <div className="w-full rounded-3xl border border-red-200 bg-red-50 px-6 py-10 text-sm text-red-700">
+        <div className="w-full rounded-3xl border border-[var(--danger-border)] bg-[var(--danger-bg)] px-6 py-10 text-sm text-[var(--danger-text)]">
           {error ?? 'Project not found.'}
         </div>
       </main>
@@ -74,17 +74,17 @@ export function ProjectView() {
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-[920px] flex-col gap-7 px-6 pb-16 pt-24 md:px-8">
-      <Link to="/projects" className="text-sm font-medium text-neutral-700 transition hover:text-[var(--color-primary)]">
+      <Link to="/projects" className="text-sm font-medium text-[var(--text-dim)] transition hover:text-[var(--color-primary)]">
         ← Back to Projects
       </Link>
 
       <header className="flex flex-col gap-4">
-        <h1 className="text-3xl font-bold tracking-tight text-neutral-950 md:text-[2.6rem]">{project.title}</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--text)] md:text-[2.6rem]">{project.title}</h1>
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_8%,white)] px-2.5 py-0.5 text-[11px] font-medium text-neutral-700"
+              className="rounded-full border border-[color-mix(in_oklch,var(--color-primary)_14%,transparent)] bg-[color-mix(in_oklch,var(--color-primary)_8%,var(--bg-card))] px-2.5 py-0.5 text-[11px] font-medium text-[var(--text-dim)]"
             >
               {tag}
             </span>
@@ -97,7 +97,7 @@ export function ProjectView() {
               href={project.githubLink}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-neutral-950 transition hover:text-[var(--color-primary)]"
+              className="font-medium text-[var(--text)] transition hover:text-[var(--color-primary)]"
             >
               GitHub →
             </a>
@@ -107,7 +107,7 @@ export function ProjectView() {
               href={project.demoLink}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-neutral-950 transition hover:text-[var(--color-primary)]"
+              className="font-medium text-[var(--text)] transition hover:text-[var(--color-primary)]"
             >
               Live Demo →
             </a>
@@ -117,7 +117,7 @@ export function ProjectView() {
 
       <MarkdownRenderer
         content={project.content}
-        className="prose prose-neutral max-w-none pt-1 text-[14px] prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:leading-7 prose-li:leading-7 prose-a:text-[var(--color-primary)]"
+        className="prose max-w-none pt-1 text-[14px] text-[var(--text-dim)] prose-headings:text-[var(--text)] prose-strong:text-[var(--text)] prose-li:text-[var(--text-dim)] prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:leading-7 prose-li:leading-7 prose-a:text-[var(--color-primary)]"
       />
     </main>
   )

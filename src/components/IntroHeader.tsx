@@ -1,4 +1,39 @@
-export function IntroHeader() {
+import type { ThemeMode } from '../App'
+
+interface IntroHeaderProps {
+  themeMode: ThemeMode
+  onToggleTheme: () => void
+}
+
+function SunIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="hero-intro-icon" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.5V5.1M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.72 5.28l-1.84 1.84M7.12 16.88l-1.84 1.84M18.72 18.72l-1.84-1.84M7.12 7.12L5.28 5.28" />
+    </svg>
+  )
+}
+
+function MoonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="hero-intro-icon" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M20.2 14.2A8.5 8.5 0 0 1 9.8 3.8a8.8 8.8 0 1 0 10.4 10.4Z" />
+    </svg>
+  )
+}
+
+function SystemIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="hero-intro-icon" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <rect x="3.5" y="4.5" width="17" height="12" rx="2" />
+      <path d="M8.5 19.5h7M12 16.5v3" />
+    </svg>
+  )
+}
+
+export function IntroHeader({ themeMode, onToggleTheme }: IntroHeaderProps) {
+  const themeTitle = themeMode === 'light' ? 'Light mode' : themeMode === 'dark' ? 'Dark mode' : 'System mode'
+
   return (
     <section className="hero hero-intro-shell">
       <section className="hero-intro">
@@ -40,6 +75,16 @@ export function IntroHeader() {
                 <path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM5.5 9.75h2.88V18H5.5V9.75Zm4.69 0h2.76v1.13h.04c.38-.73 1.32-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42V18H16.3v-3.68c0-.88-.02-2.01-1.23-2.01-1.23 0-1.42.96-1.42 1.95V18h-2.88V9.75Z" />
               </svg>
             </a>
+            <span className="hero-intro-links-sep" aria-hidden="true" />
+            <button
+              type="button"
+              className="hero-intro-icon-link hero-theme-toggle"
+              onClick={onToggleTheme}
+              aria-label="Toggle color theme"
+              title={themeTitle}
+            >
+              {themeMode === 'light' ? <SunIcon /> : themeMode === 'dark' ? <MoonIcon /> : <SystemIcon />}
+            </button>
           </div>
         </div>
       </section>

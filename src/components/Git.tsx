@@ -42,7 +42,7 @@ const GitHubChart: React.FC<GitHubChartProps> = ({
         </div>
         
         {/* Color Legend */}
-        <div className="flex items-center gap-2 text-[11px] text-gray-500 dark:text-gray-400">
+        <div className="flex items-center gap-2 text-[11px] text-[var(--text-dim)]">
           <span>Less</span>
           <div className="flex gap-1">
             <div className="h-2 w-2 bg-gray-200 rounded-sm"></div>

@@ -1,3 +1,4 @@
+import type { ThemeMode } from '../App'
 import { About } from '../components/about'
 import { CurrentProjects } from '../components/CurrentProjects'
 import { Documents } from '../components/Documents'
@@ -9,10 +10,15 @@ import { TldrSection } from '../components/TldrSection'
 import { WorkExperience } from '../components/WorkExperience'
 import GitHubChart from "../components/Git";
 
-export function HomePage() {
+interface HomePageProps {
+  themeMode: ThemeMode
+  onToggleTheme: () => void
+}
+
+export function HomePage({ themeMode, onToggleTheme }: HomePageProps) {
   return (
     <main>
-      <IntroHeader />
+      <IntroHeader themeMode={themeMode} onToggleTheme={onToggleTheme} />
       <Nav />
       <TldrSection />
       <About />

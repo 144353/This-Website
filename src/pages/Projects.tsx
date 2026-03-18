@@ -1,11 +1,17 @@
 import { useEffect, useMemo, useState } from 'react'
+import type { ThemeMode } from '../App'
 import { IntroHeader } from '../components/IntroHeader'
 import { Nav } from '../components/nav'
 import { FilterDropdown } from '../components/projects/FilterDropdown'
 import { ProjectCard } from '../components/projects/ProjectCard'
 import { fetchProjects, type ProjectMeta } from '../lib/projects'
 
-export function Projects() {
+interface ProjectsProps {
+  themeMode: ThemeMode
+  onToggleTheme: () => void
+}
+
+export function Projects({ themeMode, onToggleTheme }: ProjectsProps) {
   const [projects, setProjects] = useState<ProjectMeta[]>([])
   const [selectedTag, setSelectedTag] = useState('All')
   const [isLoading, setIsLoading] = useState(true)
@@ -53,7 +59,7 @@ export function Projects() {
 
   return (
     <main className="pb-16">
-      <IntroHeader />
+      <IntroHeader themeMode={themeMode} onToggleTheme={onToggleTheme} />
       <Nav />
       <section className="mx-auto flex w-full max-w-[980px] flex-col gap-6 px-6 pt-10 md:px-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -71,19 +77,19 @@ export function Projects() {
         </div>
 
         {isLoading ? (
-          <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-white px-6 py-10 text-sm text-neutral-600 shadow-sm">
+          <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-[var(--bg-card)] px-6 py-10 text-sm text-[var(--text-dim)] shadow-sm">
             Loading projects...
           </div>
         ) : null}
 
         {error ? (
-          <div className="rounded-3xl border border-red-200 bg-red-50 px-6 py-10 text-sm text-red-700">
+          <div className="rounded-3xl border border-[var(--danger-border)] bg-[var(--danger-bg)] px-6 py-10 text-sm text-[var(--danger-text)]">
             {error}
           </div>
         ) : null}
 
         {!isLoading && !error && filteredProjects.length === 0 ? (
-          <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-white px-6 py-10 text-sm text-neutral-600 shadow-sm">
+          <div className="rounded-3xl border border-[color-mix(in_oklch,var(--color-primary)_12%,transparent)] bg-[var(--bg-card)] px-6 py-10 text-sm text-[var(--text-dim)] shadow-sm">
             No projects matched the selected tag.
           </div>
         ) : null}
