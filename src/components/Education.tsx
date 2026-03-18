@@ -25,8 +25,8 @@ const educationItems: EducationItem[] = [
 
 function SchoolLogo() {
   return (
-    <div className="flex h-28 w-28 items-center justify-center rounded-[1.75rem] bg-[color-mix(in_oklch,var(--color-primary)_5%,white)] p-2 shadow-sm ring-1 ring-[color-mix(in_oklch,var(--color-primary)_14%,transparent)]">
-      <img src="/Temasek Poly logo.png" alt="Temasek Polytechnic" className="h-full w-full object-contain" />
+    <div className="flex h-24 w-24 items-center justify-center rounded-full">
+      <img src="idZE6J-3BF_logos.jpeg" alt="Temasek Polytechnic" className="h-full w-full rounded-full object-contain" />
     </div>
   )
 }

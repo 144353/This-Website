@@ -26,7 +26,7 @@ const experiences: ExperienceItem[] = [
 
 function PwCLogo() {
   return (
-    <div className="flex h-14 w-14 items-center justify-center rounded-full">
+    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-1.5 shadow-sm">
       <img src="/PwC_Company_Logo.svg" alt="PwC" className="h-full w-full rounded-full object-contain" />
     </div>
   )
